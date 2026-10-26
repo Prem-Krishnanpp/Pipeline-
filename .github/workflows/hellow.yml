@@ -1,0 +1,25 @@
+name: Hello pipeline
+on: push
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say Hello
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Show facts about this run
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Pushed by: ${{ github.actor }}"
+
+      - name: Look around the machine
+        run: |
+          echo "This is a brand new computer in this cloud."
+          uname -a
+          node --version
+          echo "Files in the current folder:"
+          ls -la
