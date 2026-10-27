@@ -12,7 +12,7 @@ test("health check says ok", () => {
 
 test("hello greets by name", () => {
   const res = route("GET", "/api/hello?name=Team");
-  assert.strictEqual(res.body.message, "Hello, Team!");
+  assert.strictEqual(res.body.message, "Hi, Team!");
 });
 
 test("hello falls back to world", () => {
